@@ -1,38 +1,277 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eden Consultants | Commercial Development Consulting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description"
+        content="Expert development consulting for shopping centers, QSR, restaurants, and medical condos—from feasibility to final execution support.">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .prose-custom h2 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
-  }
-}
-</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50 text-slate-900">
-    <div id="root"></div>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">E</div>
+                <div class="logo-text">EDEN <span>CONSULTANTS</span></div>
+            </a>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="industries.html">Industries</a>
+                <a href="process.html">Process</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg class="menu-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="menu-close" style="display: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-nav" class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="industries.html">Industries</a>
+            <a href="process.html">Process</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="space-y-20 pb-20">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-bg">
+                    <img src="https://picsum.photos/seed/const/1920/1080" alt="Commercial construction background">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <h1>Development Consulting for <span class="highlight">Commercial Projects.</span></h1>
+                        <p>Expert guidance for shopping centers, QSR, restaurants, and medical condos—from feasibility
+                            to final execution support.</p>
+                        <div class="hero-buttons">
+                            <a href="contact.html" class="btn btn-primary">Request a Discovery Call</a>
+                            <a href="services.html" class="btn btn-secondary">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problems We Solve -->
+            <section class="container">
+                <div class="grid grid-cols-2 gap-12" style="align-items: center;">
+                    <div>
+                        <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">Our Value
+                            Proposition</span>
+                        <h2 style="font-size: 2.25rem; margin-top: 1rem; margin-bottom: 1.5rem;">Risk reduction before
+                            dollars hit the ground.</h2>
+                        <ul class="checkmark-list">
+                            <li>
+                                <span class="checkmark-icon">✓</span>
+                                <span>Site selection and feasibility clarity</span>
+                            </li>
+                            <li>
+                                <span class="checkmark-icon">✓</span>
+                                <span>Entitlements and permitting navigation</span>
+                            </li>
+                            <li>
+                                <span class="checkmark-icon">✓</span>
+                                <span>Budget and schedule realism early</span>
+                            </li>
+                            <li>
+                                <span class="checkmark-icon">✓</span>
+                                <span>Coordination across architects, civil, and contractors</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="quote-box">
+                        <p>"We provide the strategic layer that connects your vision to construction reality."</p>
+                        <div class="quote-author">— The Eden Team</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Snapshot -->
+            <section class="bg-slate-50 py-24">
+                <div class="container text-center">
+                    <h2 class="text-3xl font-bold mb-12">Expert Consulting Services</h2>
+                    <div id="services-grid" class="grid grid-cols-4 gap-6">
+                        <!-- Services will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industries -->
+            <section class="container">
+                <div class="flex justify-between items-end mb-12 gap-4" style="flex-wrap: wrap;">
+                    <div style="max-width: 42rem;">
+                        <h2 class="text-3xl font-bold mb-4">Focused Expertise by Sector</h2>
+                        <p class="text-slate-600">We specialize in commercial sectors with unique operational
+                            intensities and technical requirements.</p>
+                    </div>
+                    <a href="industries.html" class="text-blue-600 font-semibold">View all sectors</a>
+                </div>
+                <div id="industries-grid" class="grid grid-cols-5 gap-4">
+                    <!-- Industries will be inserted here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Featured Case Studies -->
+            <section class="bg-slate-900 py-24">
+                <div class="container">
+                    <h2 class="text-3xl font-bold mb-12 text-center" style="color: white;">Outcome Driven Consulting
+                    </h2>
+                    <div id="case-studies-grid" class="grid grid-cols-3 gap-8">
+                        <!-- Case studies will be inserted here by JavaScript -->
+                    </div>
+                    <div class="mt-16 text-center">
+                        <a href="case-studies.html" class="btn btn-secondary">Explore All Outcomes</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Band -->
+            <section class="container">
+                <div class="max-w-5xl mx-auto">
+                    <div class="cta-box">
+                        <h2>Tell us what you're developing.</h2>
+                        <p>Whether it's a first site feasibility study or a complex multi-unit rollout coordination, we
+                            can provide the roadmap.</p>
+                        <div class="cta-buttons">
+                            <a href="contact.html" class="btn btn-blue">Request a Discovery Call</a>
+                            <a href="contact.html" class="btn btn-blue-dark">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo footer-brand"
+                        style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                        <div class="logo-icon" style="background-color: rgba(255, 255, 255, 0.1);">E</div>
+                        <div class="logo-text" style="color: white;">EDEN <span
+                                style="color: var(--color-slate-400); font-size: 0.875rem;">CONSULTANTS</span></div>
+                    </a>
+                    <p>Modern development consulting for commercial projects. Site selection, feasibility, and strategic
+                        coordination for shopping centers, QSR, and professional condos.</p>
+                    <div class="footer-contact">
+                        <a href="tel:#">Tel: (555) 000-0000</a>
+                        <a href="mailto:info@edenconsultants.com">info@edenconsultants.com</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Expertise</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Site Feasibility</a></li>
+                        <li><a href="services.html">Entitlements</a></li>
+                        <li><a href="industries.html">Medical Condos</a></li>
+                        <li><a href="industries.html">QSR / Restaurants</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="process.html">Our Process</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p id="copyright"></p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        // Populate services
+        const servicesGrid = document.getElementById('services-grid');
+        SERVICES.forEach(service => {
+            const serviceCard = document.createElement('div');
+            serviceCard.className = 'card';
+            serviceCard.style.textAlign = 'left';
+            serviceCard.innerHTML = `
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <a href="services.html">Learn more →</a>
+        `;
+            servicesGrid.appendChild(serviceCard);
+        });
+
+        // Populate industries
+        const industriesGrid = document.getElementById('industries-grid');
+        INDUSTRIES.forEach(industry => {
+            const industryCard = document.createElement('a');
+            industryCard.href = 'industries.html';
+            industryCard.className = 'industry-card';
+            industryCard.innerHTML = `
+          <div class="industry-icon">${industry.icon}</div>
+          <div class="industry-label">${industry.label}</div>
+        `;
+            industriesGrid.appendChild(industryCard);
+        });
+
+        // Populate case studies (first 3)
+        const caseStudiesGrid = document.getElementById('case-studies-grid');
+        CASE_STUDIES.slice(0, 3).forEach(study => {
+            const studyCard = document.createElement('a');
+            studyCard.href = `case-study-${study.slug}.html`;
+            studyCard.className = 'case-study-card';
+            studyCard.innerHTML = `
+          <div class="case-study-image">
+            <img src="${study.imageUrl}" alt="${study.title}">
+            <div class="case-study-badge">${study.industry}</div>
+          </div>
+          <h3>${study.title}</h3>
+          <p>${study.overview}</p>
+        `;
+            caseStudiesGrid.appendChild(studyCard);
+        });
+
+        // Set copyright year
+        document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Eden Consultants. All rights reserved.`;
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Eden Consultants</title>
+    <meta name="description"
+        content="Professional development consulting tailored for complex commercial environments.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="background-color: white; padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 48rem; margin-bottom: 4rem;">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Services</h1>
+                <p style="font-size: 1.25rem; color: var(--color-slate-600);">
+                    Professional development consulting tailored for complex commercial environments. We bridge the gap
+                    between initial concept and construction mobilization.
+                </p>
+            </div>
+
+            <div id="services-detail" style="display: flex; flex-direction: column; gap: 6rem;">
+                <!-- Services will be inserted here -->
+            </div>
+
+            <!-- Engagement Options -->
+            <section style="margin-top: 8rem; padding-top: 5rem; border-top: 1px solid var(--color-slate-100);">
+                <h2 class="text-3xl font-bold text-center mb-12">Flexible Engagement Models</h2>
+                <div class="grid grid-cols-3 gap-8">
+                    <div
+                        style="background-color: var(--color-slate-900); color: white; padding: 2.5rem; border-radius: var(--radius-2xl);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: white;">One-Time
+                            Consult</h3>
+                        <p style="color: var(--color-slate-400); margin-bottom: 1.5rem; font-size: 0.875rem;">Best for
+                            early site feasibility or "second opinion" reviews on specific permitting roadblocks.</p>
+                        <ul style="list-style: none; padding: 0; font-size: 0.875rem; margin-bottom: 2rem;">
+                            <li style="display: flex; gap: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;"><span>•</span>
+                                Fixed-fee deliverable</li>
+                            <li style="display: flex; gap: 0.5rem; opacity: 0.8;"><span>•</span> 72-hour turnaround
+                                option</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="background-color: white; border: 2px solid var(--color-blue-600); padding: 2.5rem; border-radius: var(--radius-2xl); position: relative;">
+                        <div
+                            style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background-color: var(--color-blue-600); color: white; padding: 0.25rem 1rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+                            Recommended</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Advisory Retainer</h3>
+                        <p style="color: var(--color-slate-600); margin-bottom: 1.5rem; font-size: 0.875rem;">Ongoing
+                            high-impact coordination for developers managing multiple projects or complex rollouts.</p>
+                        <ul
+                            style="list-style: none; padding: 0; font-size: 0.875rem; margin-bottom: 2rem; color: var(--color-slate-500);">
+                            <li style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;"><span>•</span> Priority
+                                availability</li>
+                            <li style="display: flex; gap: 0.5rem;"><span>•</span> Weekly strategy alignment</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="background-color: var(--color-slate-50); padding: 2.5rem; border-radius: var(--radius-2xl);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Project-Based Package
+                        </h3>
+                        <p style="color: var(--color-slate-600); margin-bottom: 1.5rem; font-size: 0.875rem;">End-to-end
+                            consulting from feasibility through building permit issuance.</p>
+                        <ul
+                            style="list-style: none; padding: 0; font-size: 0.875rem; margin-bottom: 2rem; color: var(--color-slate-500);">
+                            <li style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;"><span>•</span>
+                                Milestone-linked billing</li>
+                            <li style="display: flex; gap: 0.5rem;"><span>•</span> Full consultant oversight</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-16 text-center">
+                    <a href="contact.html" class="text-blue-600 font-bold">Discuss your project requirements →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="data.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        const servicesDetail = document.getElementById('services-detail');
+        SERVICES.forEach((service, idx) => {
+            const isReverse = idx % 2 !== 0;
+            const serviceSection = document.createElement('div');
+            serviceSection.style.display = 'flex';
+            serviceSection.style.gap = '3rem';
+            serviceSection.style.flexDirection = isReverse ? 'row-reverse' : 'row';
+            serviceSection.style.alignItems = 'center';
+
+            serviceSection.innerHTML = `
+          <div style="flex: 1;">
+            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs" style="display: block; margin-bottom: 1rem;">Service ${idx + 1}</span>
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;">${service.title}</h2>
+            <p style="font-size: 1.125rem; color: var(--color-slate-600); margin-bottom: 2rem; line-height: 1.6;">
+              ${service.description}
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+              <div>
+                <h4 style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 1rem;">Focus Areas</h4>
+                <ul style="list-style: none; padding: 0;">
+                  ${service.includes.map(item => `
+                    <li style="display: flex; gap: 0.5rem; color: var(--color-slate-600); font-size: 0.875rem; margin-bottom: 0.75rem;">
+                      <span style="color: var(--color-blue-500);">•</span>
+                      ${item}
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 1rem;">Key Deliverables</h4>
+                <ul style="list-style: none; padding: 0;">
+                  ${service.deliverables.map(item => `
+                    <li style="display: flex; gap: 0.5rem; color: var(--color-slate-600); font-size: 0.875rem; margin-bottom: 0.75rem;">
+                      <span style="color: #22c55e;">✓</span>
+                      ${item}
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="flex: 1; background-color: var(--color-slate-50); border-radius: var(--radius-3xl); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-slate-100); padding: 2rem;">
+            <img src="https://picsum.photos/seed/${service.id}/800/600" alt="${service.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg);">
+          </div>
+        `;
+
+            servicesDetail.appendChild(serviceSection);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,6 @@
+// Data constants for Eden Consultants website
 
-import { IndustryDetail, Service, CaseStudy } from './types';
-
-export const SERVICES: Service[] = [
+const SERVICES = [
   {
     id: 'feasibility',
     title: 'Feasibility & Site Selection',
@@ -48,7 +47,7 @@ export const SERVICES: Service[] = [
   }
 ];
 
-export const INDUSTRIES: IndustryDetail[] = [
+const INDUSTRIES = [
   {
     id: 'Shopping Center',
     label: 'Shopping Centers',
@@ -86,7 +85,7 @@ export const INDUSTRIES: IndustryDetail[] = [
   }
 ];
 
-export const CASE_STUDIES: CaseStudy[] = [
+const CASE_STUDIES = [
   {
     slug: 'representative-qsr-site-feasibility',
     title: 'Representative QSR Site Feasibility',

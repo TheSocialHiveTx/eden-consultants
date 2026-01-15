@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries | Eden Consultants</title>
+    <meta name="description"
+        content="Specialized knowledge for commercial sectors with specific technical and operational demands.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="background-color: white; padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 48rem; margin-bottom: 4rem;">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Expertise by Industry</h1>
+                <p style="font-size: 1.25rem; color: var(--color-slate-600);">
+                    Commercial real estate isn't one-size-fits-all. We provide specialized knowledge for sectors with
+                    specific technical and operational demands.
+                </p>
+            </div>
+
+            <div id="industries-detail" class="grid grid-cols-3 gap-8">
+                <!-- Industries will be inserted here -->
+            </div>
+
+            <!-- CTA Section -->
+            <section
+                style="margin-top: 8rem; background-color: var(--color-slate-900); border-radius: 3rem; padding: 6rem; color: white;">
+                <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: white;">Ready to reduce
+                        your project risk?</h2>
+                    <p style="color: var(--color-slate-400); font-size: 1.125rem; margin-bottom: 3rem;">
+                        Our industry-specific roadmaps identify permitting traps, utility gaps, and schedule risks
+                        before they become expensive problems.
+                    </p>
+                    <a href="contact.html"
+                        style="background-color: white; color: var(--color-slate-900); padding: 1rem 2.5rem; border-radius: var(--radius-xl); font-weight: 700; font-size: 1.125rem; display: inline-block; box-shadow: var(--shadow-2xl); transition: background-color 0.2s ease;">
+                        Get an Expert Opinion
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="data.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        const industriesDetail = document.getElementById('industries-detail');
+        INDUSTRIES.forEach(industry => {
+            const industryCard = document.createElement('div');
+            industryCard.style.backgroundColor = 'var(--color-slate-50)';
+            industryCard.style.border = '1px solid var(--color-slate-100)';
+            industryCard.style.padding = '2.5rem';
+            industryCard.style.borderRadius = 'var(--radius-3xl)';
+            industryCard.style.display = 'flex';
+            industryCard.style.flexDirection = 'column';
+            industryCard.style.transition = 'all 0.3s ease';
+
+            industryCard.innerHTML = `
+          <div style="font-size: 3rem; margin-bottom: 1.5rem;">${industry.icon}</div>
+          <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">${industry.label}</h2>
+          <p style="color: var(--color-slate-600); margin-bottom: 2rem; flex-grow: 1; line-height: 1.6;">
+            ${industry.description}
+          </p>
+          
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-slate-400); margin-bottom: 1rem;">Critical Focus Points</h3>
+            <ul style="list-style: none; padding: 0;">
+              ${industry.focusPoints.map(point => `
+                <li style="display: flex; gap: 0.75rem; color: var(--color-slate-700); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem;">
+                  <span style="width: 0.375rem; height: 0.375rem; background-color: var(--color-blue-500); border-radius: 50%; margin-top: 0.375rem; flex-shrink: 0;"></span>
+                  ${point}
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <a href="contact.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-blue-600); font-weight: 700; transition: all 0.2s ease;">
+            Discuss a ${industry.label} project
+            <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        `;
+
+            industryCard.addEventListener('mouseenter', function () {
+                this.style.boxShadow = 'var(--shadow-xl)';
+                this.style.borderColor = 'var(--color-blue-200)';
+            });
+
+            industryCard.addEventListener('mouseleave', function () {
+                this.style.boxShadow = '';
+                this.style.borderColor = 'var(--color-slate-100)';
+            });
+
+            industriesDetail.appendChild(industryCard);
+        });
+    </script>
+</body>
+
+</html>

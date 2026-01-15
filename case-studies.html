@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Eden Consultants</title>
+    <meta name="description" content="Outcome-driven consulting results from real commercial development projects.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="background-color: white; padding: 6rem 0;">
+        <div class="container">
+            <div style="max-width: 48rem; margin-bottom: 4rem;">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Case Studies</h1>
+                <p style="font-size: 1.25rem; color: var(--color-slate-600);">
+                    Real outcomes from commercial development projects where we provided strategic consulting and risk
+                    reduction.
+                </p>
+            </div>
+
+            <div id="case-studies-list" class="grid grid-cols-2 gap-8">
+                <!-- Case studies will be inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="data.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        const caseStudiesList = document.getElementById('case-studies-list');
+        CASE_STUDIES.forEach(study => {
+            const studyCard = document.createElement('a');
+            studyCard.href = `case-study-${study.slug}.html`;
+            studyCard.style.display = 'block';
+            studyCard.style.transition = 'transform 0.3s ease';
+
+            studyCard.innerHTML = `
+          <div style="position: relative; aspect-ratio: 16/9; border-radius: var(--radius-xl); overflow: hidden; margin-bottom: 1.5rem; background-color: var(--color-slate-100);">
+            <img src="${study.imageUrl}" alt="${study.title}" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem; background-color: rgba(255, 255, 255, 0.9); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; color: var(--color-slate-900);">
+              ${study.industry}
+            </div>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-slate-900);">${study.title}</h3>
+          <p style="color: var(--color-slate-600); margin-bottom: 1rem; line-height: 1.6;">${study.overview}</p>
+          <div style="color: var(--color-blue-600); font-weight: 600; font-size: 0.875rem;">Read case study →</div>
+        `;
+
+            studyCard.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-4px)';
+            });
+
+            studyCard.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+
+            caseStudiesList.appendChild(studyCard);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | Eden Consultants</title>
+    <meta name="description"
+        content="Predictable outcomes require a repeatable process. Learn about our structured approach to commercial development consulting.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="background-color: white; padding: 6rem 0;">
+        <div class="container">
+            <div style="max-width: 48rem; margin-bottom: 6rem;">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Our Process</h1>
+                <p style="font-size: 1.25rem; color: var(--color-slate-600);">
+                    Predictable outcomes require a repeatable process. We follow a structured approach to move your
+                    project from a concept to a mobilized construction site.
+                </p>
+            </div>
+
+            <div style="position: relative;">
+                <!-- Vertical line -->
+                <div
+                    style="display: none; position: absolute; left: 3.5rem; top: 0; bottom: 0; width: 1px; background-color: var(--color-slate-100); z-index: 0;">
+                </div>
+
+                <div id="process-steps"
+                    style="display: flex; flex-direction: column; gap: 6rem; position: relative; z-index: 10;">
+                    <!-- Process steps will be inserted here -->
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div
+                style="margin-top: 8rem; padding: 5rem; background-color: var(--color-blue-600); border-radius: 3rem; text-align: center; color: white;">
+                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Ready to start at
+                    Step 01?</h2>
+                <p
+                    style="color: var(--color-blue-100); font-size: 1.125rem; margin-bottom: 2.5rem; max-width: 36rem; margin-left: auto; margin-right: auto;">
+                    The best discovery calls happen early. Let's align your project goals before the first design
+                    contract is signed.
+                </p>
+                <a href="contact.html"
+                    style="background-color: white; color: var(--color-blue-600); padding: 1rem 2.5rem; border-radius: var(--radius-xl); font-weight: 700; font-size: 1.125rem; display: inline-block; box-shadow: var(--shadow-2xl); transition: background-color 0.2s ease;">
+                    Request a Discovery Session
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="data.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        const PROCESS_STEPS = [
+            {
+                step: '01',
+                title: 'Discovery',
+                description: 'We start by clarifying your high-level goals, budget assumptions, and desired timeline.',
+                details: ['Goal alignment session', 'Stakeholder identification', 'Constraint inventory']
+            },
+            {
+                step: '02',
+                title: 'Feasibility Scan',
+                description: 'A deep dive into the physical and regulatory constraints of the site.',
+                details: ['Utility capacity check', 'Access & grading review', 'Showstopper identification']
+            },
+            {
+                step: '03',
+                title: 'Permitting Roadmap',
+                description: 'We map out every approval needed, from municipal entitlements to final building permits.',
+                details: ['Milestone timeline creation', 'Risk flag highlighting', 'City coordination planning']
+            },
+            {
+                step: '04',
+                title: 'Team Alignment',
+                description: 'Ensuring your architect, civil, and MEP consultants have zero scope gaps.',
+                details: ['Consultant scope review', 'Action tracker setup', 'Decision log management']
+            },
+            {
+                step: '05',
+                title: 'Execution Support',
+                description: 'Ongoing visibility during design and mobilization to ensure owner priorities are met.',
+                details: ['Progress monitoring', 'Issue escalation support', 'Owner-side risk log']
+            }
+        ];
+
+        const processSteps = document.getElementById('process-steps');
+        PROCESS_STEPS.forEach(step => {
+            const stepDiv = document.createElement('div');
+            stepDiv.style.display = 'flex';
+            stepDiv.style.gap = '4rem';
+
+            stepDiv.innerHTML = `
+          <div style="flex-shrink: 0;">
+            <div style="width: 7rem; height: 7rem; background-color: var(--color-blue-600); border-radius: var(--radius-3xl); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 900; box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.3);">
+              ${step.step}
+            </div>
+          </div>
+          <div style="max-width: 48rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">${step.title}</h2>
+            <p style="font-size: 1.125rem; color: var(--color-slate-600); margin-bottom: 2rem; line-height: 1.6;">
+              ${step.description}
+            </p>
+            <div style="background-color: var(--color-slate-50); padding: 2rem; border-radius: var(--radius-2xl); border: 1px solid var(--color-slate-100);">
+              <h4 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-slate-400); margin-bottom: 1rem;">Deliverables & Tasks</h4>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                ${step.details.map(detail => `
+                  <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--color-slate-700); font-weight: 500;">
+                    <span style="width: 0.375rem; height: 0.375rem; background-color: var(--color-blue-500); border-radius: 50%; flex-shrink: 0;"></span>
+                    ${detail}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+
+            processSteps.appendChild(stepDiv);
+        });
+    </script>
+</body>
+
+</html>
