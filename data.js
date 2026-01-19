@@ -89,19 +89,22 @@ const CASE_STUDIES = [
   {
     slug: 'representative-qsr-site-feasibility',
     title: 'Representative QSR Site Feasibility',
+    subtitle: 'De-risking sites before capital is committed',
     industry: 'QSR',
     location: 'TBD',
     year: '2025',
     imageUrl: 'https://picsum.photos/seed/qsr/800/600',
-    overview: 'Provided early feasibility guidance and a permitting roadmap to reduce risk before design spend for a national franchise expansion.',
+    overview: 'We provide early-stage feasibility and entitlement guidance for quick-service restaurant developments, helping teams identify fatal flaws before design dollars are spent. Our approach evaluates site constraints, utility capacity, access, permitting risk, and jurisdictional hurdles—so decisions are made with clarity, not assumptions.',
     what_we_did: [
-      'Reviewed site constraints and access considerations',
-      'Outlined approvals and expected permitting steps',
-      'Identified schedule risks and mitigation actions'
+      'Evaluated site constraints and utility capacity',
+      'Assessed access and permitting risks',
+      'Identified jurisdictional hurdles',
+      'Provided early-stage entitlement guidance'
     ],
     outcomes: [
-      'Clear go/no-go decision support',
-      'Reduced unknowns before contract and design commitments'
+      'Faster go/no-go decisions',
+      'Reduced redesign risk',
+      'Stronger confidence moving into acquisition'
     ],
     timeline: '2–3 weeks',
     tags: ['feasibility', 'permitting', 'risk reduction']
@@ -109,38 +112,44 @@ const CASE_STUDIES = [
   {
     slug: 'medical-condo-utility-alignment',
     title: 'Medical Condo Utility Alignment',
+    subtitle: 'Coordinating complex systems for healthcare tenants',
     industry: 'Medical Condo',
     location: 'TBD',
     year: '2024',
     imageUrl: 'https://picsum.photos/seed/medical/800/600',
-    overview: 'Coordinated specialized MEP requirements for a 12-unit medical condo project to ensure tenant improvement readiness.',
+    overview: 'Medical condo developments require precise alignment of utilities, MEP systems, and tenant requirements. We coordinate early with design teams, ownership, and providers to ensure infrastructure supports medical use without costly downstream modifications. Our process anticipates tenant improvement needs, future flexibility, and compliance considerations.',
     what_we_did: [
-      'MEP systems capacity review',
-      'Consultant team scope alignment',
-      'City utility coordination'
+      'Coordinated with design teams and ownership',
+      'Aligned MEP systems with tenant requirements',
+      'Anticipated future flexibility needs',
+      'Ensured compliance considerations'
     ],
     outcomes: [
-      'Zero change orders on primary utility service',
-      'Predictable tenant fit-out timelines'
+      'Fewer change orders',
+      'Smoother tenant build-outs',
+      'Infrastructure that supports long-term value'
     ],
     tags: ['MEP', 'coordination', 'medical']
   },
   {
     slug: 'shopping-center-redevelopment-study',
     title: 'Shopping Center Phasing Strategy',
+    subtitle: 'Redeveloping without disrupting revenue',
     industry: 'Shopping Center',
     location: 'TBD',
     year: '2024',
     imageUrl: 'https://picsum.photos/seed/shopping/800/600',
-    overview: 'Strategic phasing analysis for a multi-tenant shopping center redevelopment to maintain existing tenant operations.',
+    overview: 'Redeveloping an active shopping center demands strategic phasing that protects tenants while advancing construction. We analyze site logistics, tenant operations, utilities, and access to develop phased plans that maintain continuity and minimize disruption. Our strategies balance speed, cost control, and tenant retention.',
     what_we_did: [
-      'Operational impact analysis',
-      'Phased utility cutover planning',
-      'Contractor logistics coordination'
+      'Analyzed site logistics and tenant operations',
+      'Developed phased construction plans',
+      'Maintained utility and access continuity',
+      'Balanced speed with tenant retention'
     ],
     outcomes: [
-      'Minimal downtime for existing anchor tenants',
-      'Phased delivery on schedule'
+      'Preserved cash flow',
+      'Reduced tenant conflict',
+      'Executable redevelopment plans'
     ],
     tags: ['phasing', 'logistics', 'redevelopment']
   }

@@ -221,6 +221,40 @@
         </div>
     </footer>
 
+    <!-- Case Study Modal -->
+    <div id="case-study-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <div id="modal-tag" class="modal-tag">Industry</div>
+                <h2 id="modal-title" style="color: white; font-size: 1.75rem; margin-bottom: 0.5rem;">Case Study Title
+                </h2>
+                <p id="modal-subtitle" class="modal-subtitle">Subtitle goes here</p>
+            </div>
+            <div class="modal-content">
+                <p id="modal-overview"
+                    style="font-size: 1.125rem; margin-bottom: 2rem; color: var(--color-slate-700); line-height: 1.7; border-left: 4px solid var(--color-blue-600); padding-left: 1.5rem;">
+                    Overview text goes here...
+                </p>
+
+                <div class="grid grid-cols-2 gap-8" style="margin-bottom: 2rem;">
+                    <div class="modal-section">
+                        <h4>Outcomes</h4>
+                        <ul id="modal-outcomes">
+                            <!-- Outcomes loaded here -->
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h4>What We Did</h4>
+                        <ul id="modal-what-we-did">
+                            <!-- Actions loaded here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="data.js"></script>
     <script src="navigation.js"></script>
@@ -254,19 +288,65 @@
 
         // Populate case studies (first 3)
         const caseStudiesGrid = document.getElementById('case-studies-grid');
-        CASE_STUDIES.slice(0, 3).forEach(study => {
-            const studyCard = document.createElement('a');
-            studyCard.href = `case-study-${study.slug}.html`;
+        CASE_STUDIES.slice(0, 3).forEach((study, index) => {
+            const studyCard = document.createElement('div');
+            // Make the entire card clickable
+            studyCard.onclick = () => openModal(index);
+            studyCard.style.cursor = 'pointer';
             studyCard.className = 'case-study-card';
+
             studyCard.innerHTML = `
           <div class="case-study-image">
             <img src="${study.imageUrl}" alt="${study.title}">
             <div class="case-study-badge">${study.industry}</div>
           </div>
           <h3>${study.title}</h3>
-          <p>${study.overview}</p>
+          <p>${study.subtitle || study.overview}</p>
         `;
             caseStudiesGrid.appendChild(studyCard);
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('case-study-modal');
+
+        function openModal(index) {
+            const study = CASE_STUDIES[index];
+
+            // Populate data
+            document.getElementById('modal-title').textContent = study.title;
+            document.getElementById('modal-subtitle').textContent = study.subtitle || '';
+            document.getElementById('modal-tag').textContent = study.industry;
+            document.getElementById('modal-overview').textContent = study.overview;
+
+            // Clear and populate lists
+            const outcomeList = document.getElementById('modal-outcomes');
+            outcomeList.innerHTML = study.outcomes.map(item => `<li>${item}</li>`).join('');
+
+            const actionList = document.getElementById('modal-what-we-did');
+            actionList.innerHTML = study.what_we_did.map(item => `<li>${item}</li>`).join('');
+
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close on clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
         });
 
         // Set copyright year
