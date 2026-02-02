@@ -11,7 +11,7 @@ const SERVICES = [
       'Go/no-go decision support'
     ],
     deliverables: ['Feasibility notes', 'Risk list', 'Recommended next steps'],
-    image: 'images/service-feasibility.png'
+    image: 'images/QSR SITE FEAS.png'
   },
   {
     id: 'entitlements',
@@ -35,7 +35,7 @@ const SERVICES = [
       'Meeting facilitation and decision logs'
     ],
     deliverables: ['Meeting notes', 'Action tracker'],
-    image: 'images/service-coordination.png'
+    image: 'images/Medical Condo Utility.png'
   },
   {
     id: 'budget-schedule',
@@ -47,7 +47,7 @@ const SERVICES = [
       'Schedule logic review'
     ],
     deliverables: ['Budget assumptions', 'Schedule review notes'],
-    image: 'images/service-budget.png'
+    image: 'images/Phasing Strat.png'
   }
 ];
 

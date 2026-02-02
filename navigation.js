@@ -2,65 +2,65 @@
 
 // Initialize navigation on page load
 document.addEventListener('DOMContentLoaded', function () {
-    initNavigation();
-    highlightActivePage();
+  initNavigation();
+  highlightActivePage();
 });
 
 function initNavigation() {
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
 
-    if (mobileMenuBtn && mobileNav) {
-        mobileMenuBtn.addEventListener('click', function () {
-            mobileNav.classList.toggle('active');
+  if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', function () {
+      mobileNav.classList.toggle('active');
 
-            // Toggle icon
-            const openIcon = this.querySelector('.menu-open');
-            const closeIcon = this.querySelector('.menu-close');
+      // Toggle icon
+      const openIcon = this.querySelector('.menu-open');
+      const closeIcon = this.querySelector('.menu-close');
 
-            if (mobileNav.classList.contains('active')) {
-                openIcon.style.display = 'none';
-                closeIcon.style.display = 'block';
-            } else {
-                openIcon.style.display = 'block';
-                closeIcon.style.display = 'none';
-            }
-        });
+      if (mobileNav.classList.contains('active')) {
+        openIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+      } else {
+        openIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      }
+    });
 
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileNav.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                mobileNav.classList.remove('active');
-                const openIcon = mobileMenuBtn.querySelector('.menu-open');
-                const closeIcon = mobileMenuBtn.querySelector('.menu-close');
-                openIcon.style.display = 'block';
-                closeIcon.style.display = 'none';
-            });
-        });
-    }
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        mobileNav.classList.remove('active');
+        const openIcon = mobileMenuBtn.querySelector('.menu-open');
+        const closeIcon = mobileMenuBtn.querySelector('.menu-close');
+        openIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      });
+    });
+  }
 }
 
 function highlightActivePage() {
-    const currentPage = window.location.pathname;
-    const navLinks = document.querySelectorAll('nav a, .mobile-nav a');
+  const currentPage = window.location.pathname;
+  const navLinks = document.querySelectorAll('nav a, .mobile-nav a');
 
-    navLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
+  navLinks.forEach(link => {
+    const linkPath = new URL(link.href).pathname;
 
-        // Check if this is the current page
-        if (currentPage === linkPath ||
-            (currentPage.endsWith('/') && linkPath === '/index.html') ||
-            (currentPage === '/' && linkPath === '/index.html')) {
-            link.classList.add('active');
-        }
-    });
+    // Check if this is the current page
+    if (currentPage === linkPath ||
+      (currentPage.endsWith('/') && linkPath === '/index.html') ||
+      (currentPage === '/' && linkPath === '/index.html')) {
+      link.classList.add('active');
+    }
+  });
 }
 
 // Generate header HTML
 function generateHeader() {
-    return `
+  return `
     <header>
       <div class="header-container">
         <a href="index.html" class="logo">
@@ -105,9 +105,9 @@ function generateHeader() {
 
 // Generate footer HTML
 function generateFooter() {
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-    return `
+  return `
     <footer>
       <div class="footer-container">
         <div class="footer-grid">
@@ -118,8 +118,7 @@ function generateFooter() {
             </a>
             <p>Modern development consulting for commercial projects. Site selection, feasibility, and strategic coordination for shopping centers, QSR, and professional condos.</p>
             <div class="footer-contact">
-              <a href="tel:#">Tel: (555) 000-0000</a>
-              <a href="mailto:info@edenconsultants.com">info@edenconsultants.com</a>
+              <!-- Contact info removed -->
             </div>
           </div>
           
@@ -158,20 +157,20 @@ function generateFooter() {
 
 // Helper function to insert header and footer if placeholders exist
 function insertHeaderFooter() {
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    const footerPlaceholder = document.getElementById('footer-placeholder');
+  const headerPlaceholder = document.getElementById('header-placeholder');
+  const footerPlaceholder = document.getElementById('footer-placeholder');
 
-    if (headerPlaceholder) {
-        headerPlaceholder.innerHTML = generateHeader();
-    }
+  if (headerPlaceholder) {
+    headerPlaceholder.innerHTML = generateHeader();
+  }
 
-    if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = generateFooter();
-    }
+  if (footerPlaceholder) {
+    footerPlaceholder.innerHTML = generateFooter();
+  }
 
-    // Re-initialize navigation after inserting HTML
-    initNavigation();
-    highlightActivePage();
+  // Re-initialize navigation after inserting HTML
+  initNavigation();
+  highlightActivePage();
 }
 
 // Auto-insert if placeholders exist
