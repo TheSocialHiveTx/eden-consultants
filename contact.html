@@ -57,24 +57,7 @@
 
                     <div style="display: flex; flex-direction: column; gap: 2rem;">
                         <div style="display: flex; gap: 1.5rem;">
-                            <div
-                                style="width: 3rem; height: 3rem; background-color: rgba(255, 255, 255, 0.1); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">
-                                📞</div>
-                            <div>
-                                <h3 style="font-weight: 700; margin-bottom: 0.25rem; color: white;">Call Us</h3>
-                                <a href="tel:#" style="color: var(--color-blue-400); transition: color 0.2s ease;">(555)
-                                    000-0000</a>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 1.5rem;">
-                            <div
-                                style="width: 3rem; height: 3rem; background-color: rgba(255, 255, 255, 0.1); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">
-                                📧</div>
-                            <div>
-                                <h3 style="font-weight: 700; margin-bottom: 0.25rem; color: white;">Email</h3>
-                                <a href="mailto:info@edenconsultants.com"
-                                    style="color: var(--color-blue-400); transition: color 0.2s ease;">info@edenconsultants.com</a>
-                            </div>
+                            <!-- Contact info hidden -->
                         </div>
                         <div style="display: flex; gap: 1.5rem;">
                             <div
@@ -95,80 +78,9 @@
                 <div style="max-width: 36rem;">
                     <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">Request a Discovery Call</h2>
 
-                    <div id="success-message"
-                        style="display: none; background-color: white; padding: 3rem; border-radius: var(--radius-3xl); box-shadow: var(--shadow-xl); border: 1px solid var(--color-slate-100); text-align: center;">
-                        <div
-                            style="width: 5rem; height: 5rem; background-color: #dcfce7; color: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem;">
-                            ✓</div>
-                        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Request Received</h2>
-                        <p style="color: var(--color-slate-600); margin-bottom: 2rem;">Thank you for reaching out. A
-                            senior consultant will review your project details and contact you within 24 business hours.
-                        </p>
-                        <button onclick="resetForm()"
-                            style="color: var(--color-blue-600); font-weight: 700; background: none; border: none; cursor: pointer;">Send
-                            another request</button>
-                    </div>
-
-                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                            <div>
-                                <label class="form-label">Name *</label>
-                                <input required type="text" name="name" class="form-input">
-                            </div>
-                            <div>
-                                <label class="form-label">Company</label>
-                                <input type="text" name="company" class="form-input">
-                            </div>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                            <div>
-                                <label class="form-label">Email *</label>
-                                <input required type="email" name="email" class="form-input">
-                            </div>
-                            <div>
-                                <label class="form-label">Phone</label>
-                                <input type="tel" name="phone" class="form-input">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="form-label">Project Type</label>
-                            <select name="project_type" class="form-input" style="appearance: none;">
-                                <option>Shopping Center</option>
-                                <option>Fast Food / QSR</option>
-                                <option>Restaurant</option>
-                                <option>Office Condo</option>
-                                <option>Medical Condo</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="form-label">Project Location (City/State)</label>
-                            <input type="text" name="project_location" class="form-input" placeholder="e.g. Austin, TX">
-                        </div>
-
-                        <div>
-                            <label class="form-label">Message / Project Details</label>
-                            <textarea name="message" rows="4" class="form-input"
-                                placeholder="Tell us about the project goals or current roadblocks..."></textarea>
-                        </div>
-
-                        <div style="display: none;">
-                            <input type="checkbox" name="honeypot">
-                        </div>
-
-                        <button type="submit"
-                            style="width: 100%; background-color: var(--color-blue-600); color: white; padding: 1.25rem; border-radius: var(--radius-xl); font-weight: 700; font-size: 1.125rem; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: var(--shadow-lg);">
-                            Send Discovery Request
-                        </button>
-
-                        <p
-                            style="font-size: 0.75rem; color: var(--color-slate-500); text-align: center; margin-top: 1rem;">
-                            By submitting this form, you agree to be contacted by Eden Consultants regarding your
-                            project.
-                        </p>
-                    </form>
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScRAwIvF6qps5dkOtU90ED5M-L4wGKNDmoj26BOR2kdsYDkcw/viewform?embedded=true"
+                        width="640" height="1347" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
             </section>
         </div>
@@ -179,25 +91,6 @@
     <script src="data.js"></script>
     <script src="navigation.js"></script>
     <script>
-        const form = document.getElementById('contact-form');
-        const successMessage = document.getElementById('success-message');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Simulate form submission
-            console.log('Form submitted');
-
-            // Show success message
-            form.style.display = 'none';
-            successMessage.style.display = 'block';
-        });
-
-        function resetForm() {
-            form.reset();
-            form.style.display = 'flex';
-            successMessage.style.display = 'none';
-        }
     </script>
 </body>
 

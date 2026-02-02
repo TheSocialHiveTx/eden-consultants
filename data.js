@@ -10,7 +10,8 @@ const SERVICES = [
       'High-level due diligence checklists',
       'Go/no-go decision support'
     ],
-    deliverables: ['Feasibility notes', 'Risk list', 'Recommended next steps']
+    deliverables: ['Feasibility notes', 'Risk list', 'Recommended next steps'],
+    image: 'images/service-feasibility.png'
   },
   {
     id: 'entitlements',
@@ -21,7 +22,8 @@ const SERVICES = [
       'Coordination plan with civil/architect/municipality',
       'Timeline risk identification'
     ],
-    deliverables: ['Permitting roadmap', 'Milestone timeline']
+    deliverables: ['Permitting roadmap', 'Milestone timeline'],
+    image: 'images/service-entitlements.png'
   },
   {
     id: 'coordination',
@@ -32,7 +34,8 @@ const SERVICES = [
       'Scope gap identification',
       'Meeting facilitation and decision logs'
     ],
-    deliverables: ['Meeting notes', 'Action tracker']
+    deliverables: ['Meeting notes', 'Action tracker'],
+    image: 'images/service-coordination.png'
   },
   {
     id: 'budget-schedule',
@@ -43,7 +46,8 @@ const SERVICES = [
       'Phasing strategy for active sites',
       'Schedule logic review'
     ],
-    deliverables: ['Budget assumptions', 'Schedule review notes']
+    deliverables: ['Budget assumptions', 'Schedule review notes'],
+    image: 'images/service-budget.png'
   }
 ];
 
@@ -93,7 +97,7 @@ const CASE_STUDIES = [
     industry: 'QSR',
     location: 'TBD',
     year: '2025',
-    imageUrl: 'https://picsum.photos/seed/qsr/800/600',
+    imageUrl: 'images/QSR SITE FEAS.png',
     overview: 'We provide early-stage feasibility and entitlement guidance for quick-service restaurant developments, helping teams identify fatal flaws before design dollars are spent. Our approach evaluates site constraints, utility capacity, access, permitting risk, and jurisdictional hurdles—so decisions are made with clarity, not assumptions.',
     what_we_did: [
       'Evaluated site constraints and utility capacity',
@@ -116,7 +120,7 @@ const CASE_STUDIES = [
     industry: 'Medical Condo',
     location: 'TBD',
     year: '2024',
-    imageUrl: 'https://picsum.photos/seed/medical/800/600',
+    imageUrl: 'images/Medical Condo Utility.png',
     overview: 'Medical condo developments require precise alignment of utilities, MEP systems, and tenant requirements. We coordinate early with design teams, ownership, and providers to ensure infrastructure supports medical use without costly downstream modifications. Our process anticipates tenant improvement needs, future flexibility, and compliance considerations.',
     what_we_did: [
       'Coordinated with design teams and ownership',
@@ -129,6 +133,7 @@ const CASE_STUDIES = [
       'Smoother tenant build-outs',
       'Infrastructure that supports long-term value'
     ],
+    timeline: '6 months',
     tags: ['MEP', 'coordination', 'medical']
   },
   {
@@ -138,7 +143,7 @@ const CASE_STUDIES = [
     industry: 'Shopping Center',
     location: 'TBD',
     year: '2024',
-    imageUrl: 'https://picsum.photos/seed/shopping/800/600',
+    imageUrl: 'images/Phasing Strat.png',
     overview: 'Redeveloping an active shopping center demands strategic phasing that protects tenants while advancing construction. We analyze site logistics, tenant operations, utilities, and access to develop phased plans that maintain continuity and minimize disruption. Our strategies balance speed, cost control, and tenant retention.',
     what_we_did: [
       'Analyzed site logistics and tenant operations',
@@ -151,6 +156,7 @@ const CASE_STUDIES = [
       'Reduced tenant conflict',
       'Executable redevelopment plans'
     ],
+    timeline: '4 months',
     tags: ['phasing', 'logistics', 'redevelopment']
   }
 ];
